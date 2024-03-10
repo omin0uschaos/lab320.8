@@ -8,7 +8,7 @@ function Episodes() {
     const [episodes, setEpisodes] = useState(null)
 
     let { page } = useParams();
-    const url = `https://stapi.co/api/v1/rest/episode/search?pageNumber=${page}&pageSize=20`
+    const url = `https://stapi.co/api/v1/rest/episode/search?pageNumber=${page}&pageSize=25`
 
     async function getEpisodes() {
         try {
@@ -31,6 +31,9 @@ function Episodes() {
           let prevPage = Number(page) - 1;
           let nextPage = Number(page) + 1;
   
+          if (prevPage <= 0){
+            let prevPagePath = `/episodes/${prevPage}`;
+          }
           let prevPagePath = `/episodes/${prevPage}`;
           let nextPagePath = `/episodes/${nextPage}`;
   
