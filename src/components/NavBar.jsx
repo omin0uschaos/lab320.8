@@ -13,7 +13,7 @@ function NavBar() {
         <Link to='/episodes/0'>
             <div>EPISODES</div>
         </Link>
-        <Link to='/animals'>
+        <Link to='/animals/0'>
             <div>ANIMALS</div>
         </Link>
     </div>

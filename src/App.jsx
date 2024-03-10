@@ -15,8 +15,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/animals' element={<Animals />} />
-        <Route path='/characters' element={<Characters />} />
+        <Route path='/animals/:page' element={<Animals />} />
+        <Route path='/characters/:page' element={<Characters />} />
         <Route path='/episodes/:page' element={<Episodes />} />
         <Route path='/spaceships/:page' element={<Spaceships />} />
         <Route path='*' element={<NotFound />} />
