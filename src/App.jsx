@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import NavBar from './components/NavBar'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
@@ -10,7 +9,6 @@ import Spaceships from './pages/Spaceships'
 import NotFound from './pages/NotFound'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -20,7 +18,7 @@ function App() {
         <Route path='/animals' element={<Animals />} />
         <Route path='/characters' element={<Characters />} />
         <Route path='/episodes' element={<Episodes />} />
-        <Route path='/spaceships' element={<Spaceships />} />
+        <Route path='/spaceships/:page' element={<Spaceships />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
