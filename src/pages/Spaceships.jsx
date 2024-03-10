@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function Spaceships() {
@@ -22,17 +23,35 @@ function Spaceships() {
 
     useEffect(() => {
         getShips();
-    }, []);
+    }, [page]);
 
     const loaded = () => {
-        if (ships && ships.spacecrafts) { // Check if ships and ships.spacecrafts are not null
+        if (ships && ships.spacecrafts) {
+            let prevPage = Number(page) - 1;
+            let nextPage = Number(page) + 1;
+
+            let prevPagePath = `/spaceships/${prevPage}`;
+            let nextPagePath = `/spaceships/${nextPage}`;
             return (
-                ships.spacecrafts.map((ship) => (
-                    <li key={ship.uid}>{ship.uid} - {ship.name} - {ship.status}</li>
-                ))
+              <> 
+                <ul>
+                    {ships.spacecrafts.map((ship) => (
+                        <li key={ship.uid}>
+                            <span>{ship.uid}</span>
+                            <span>{ship.name}</span>
+                            <span>{ship.status}</span>
+                        </li>
+                    ))}
+                </ul>
+                <div className="pagination">
+                    <Link to={prevPagePath} disabled={prevPage < 1}>PREV</Link>
+                    <Link to={nextPagePath}>NEXT</Link>
+                </div>
+            </> 
             );
         }
     };
+    
 
     const loading = () => {
         return <h1>Loading...</h1>;

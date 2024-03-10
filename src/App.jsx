@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='/animals' element={<Animals />} />
         <Route path='/characters' element={<Characters />} />
-        <Route path='/episodes' element={<Episodes />} />
+        <Route path='/episodes/:page' element={<Episodes />} />
         <Route path='/spaceships/:page' element={<Spaceships />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
