@@ -9,7 +9,6 @@ function App() {
   return (
     <>
       <NavBar />
-      <div>star trek</div> 
     </>
   )
 }

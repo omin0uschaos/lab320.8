@@ -9,7 +9,7 @@ function NavBar() {
         <Link to='/characters'>
             <div>CHARACTERS</div>
         </Link>
-        <div>STAR TREK</div>
+        <Link to='/'><div>STAR TREK</div></Link>
         <Link to='/episodes'>
             <div>EPISODES</div>
         </Link>
