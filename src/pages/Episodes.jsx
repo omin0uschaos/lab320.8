@@ -30,11 +30,13 @@ function Episodes() {
       if (episodes && episodes.episodes) { // Check if episodes and episodes.episodes are not null
           let prevPage = Number(page) - 1;
           let nextPage = Number(page) + 1;
-  
+          let prevPagePath;
           if (prevPage <= 0){
-            let prevPagePath = `/episodes/${prevPage}`;
+            prevPagePath = `/episodes/0`; // Assign value to prevPagePath
+          } else {
+            prevPagePath = `/episodes/${prevPage}`; // Assign value to prevPagePath
           }
-          let prevPagePath = `/episodes/${prevPage}`;
+
           let nextPagePath = `/episodes/${nextPage}`;
   
           return (

@@ -31,11 +31,13 @@ function Animals() {
       if (animals) { // Check if episodes and episodes.episodes are not null
           let prevPage = Number(page) - 1;
           let nextPage = Number(page) + 1;
-  
+          let prevPagePath;
           if (prevPage <= 0){
-          let prevPagePath = `/animals/${prevPage}`;
+          prevPagePath = `/animals/0`;
+          } else{
+            prevPagePath = `/animals/${prevPage}`;
           }
-          let prevPagePath = `/animals/${prevPage}`;
+
           let nextPagePath = `/animals/${nextPage}`;
   
           return (

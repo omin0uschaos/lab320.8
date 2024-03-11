@@ -29,11 +29,15 @@ function Spaceships() {
         if (ships && ships.spacecrafts) {
             let prevPage = Number(page) - 1;
             let nextPage = Number(page) + 1;
-
-            let prevPagePath = `/spaceships/${prevPage}`;
+            let prevPagePath;
+            if(prevPage <= 0){
+                prevPagePath = `/spaceships/0`;
+            } else {
+                prevPagePath = `/spaceships/${prevPage}`;
+            }
             let nextPagePath = `/spaceships/${nextPage}`;
             return (
-              <> 
+              <>
                 <ul>
                     {ships.spacecrafts.map((ship) => (
                         <li key={ship.uid}>
@@ -47,7 +51,7 @@ function Spaceships() {
                     <Link to={prevPagePath} disabled={prevPage < 1}>PREV</Link>
                     <Link to={nextPagePath}>NEXT</Link>
                 </div>
-            </> 
+            </>
             );
         }
     };
